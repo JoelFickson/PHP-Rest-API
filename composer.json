@@ -1,14 +1,19 @@
 {
-    "name": "jfngozo/git",
-    "description": "A simple web application combining JavaScript, PHP, MySQL and Bootstrap for UI",
-    "type": "project",
-    "license": "Free",
-    "authors": [
-        {
-            "name": "Joel F Ngozo",
-            "email": "Joelngozo@gmail.com"
-        }
-    ],
-    "minimum-stability": "beta",
-    "require": {}
+  "autoload": {
+    "classmap": [
+      "Secure/"
+    ]
+  },
+  "name": "jfngozo/git",
+  "description": "A simple web application combining JavaScript, PHP, MySQL and Bootstrap for UI",
+  "type": "project",
+  "license": "Free",
+  "authors": [
+    {
+      "name": "Joel F Ngozo",
+      "email": "Joelngozo@gmail.com"
+    }
+  ],
+  "minimum-stability": "beta",
+  "require": {}
 }

@@ -6,10 +6,12 @@
  * Time: 8:35 PM
  */
 
+require_once "vendor/autoload.php";
 ?>
 
 <!doctype html>
 <html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">

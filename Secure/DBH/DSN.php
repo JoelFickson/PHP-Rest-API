@@ -6,17 +6,26 @@
  * Time: 8:48 PM
  */
 
-class DSN
+class DSN extends Env
 {
-    public $dbc;
+    public $DSN;
     private static $instance;
 
     private function __construct()
     {
-        $this->dbhc = new PDO('mysql:host=localhost;dbname=example', "root", "");
+
+
+        try {
+            $this->DSN = new PDO("mysql:host=" . self::DB_SERVER . ";dbname=" . self::DB_NAME,
+                self::DB_USER, self::DB_PASS);
+
+
+        } catch (PDOException $e) {
+            die($e->getMessage());
+        }
     }
 
-    //singleton pattern
+    //SingleTon Connection Class
     public static function getInstance()
     {
         if (!isset(self::$instance)) {
