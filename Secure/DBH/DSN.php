@@ -8,16 +8,22 @@
 
 class DSN extends Env
 {
-    public $DSN;
-    private static $instance;
+    private static $_instance = null;
+    private $_pdo;
+
 
     private function __construct()
     {
 
+        $opt = [
+            \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
+            \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,
+            \PDO::ATTR_EMULATE_PREPARES => false,
+        ];
 
         try {
-            $this->DSN = new PDO("mysql:host=" . self::DB_SERVER . ";dbname=" . self::DB_NAME,
-                self::DB_USER, self::DB_PASS);
+            $this->_pdo = new PDO("mysql:host=" . self::DB_SERVER . ";dbname=" . self::DB_NAME,
+                self::DB_USER, self::DB_PASS, $opt);
 
 
         } catch (PDOException $e) {
@@ -25,13 +31,21 @@ class DSN extends Env
         }
     }
 
-    //SingleTon Connection Class
+
+    // Magic method clone is empty to prevent duplication of connection
+
     public static function getInstance()
     {
-        if (!isset(self::$instance)) {
-            $object = __CLASS__;
-            self::$instance = new $object;
+        if (!isset(self::$_instance)) {
+            self::$_instance = new DSN();
         }
-        return self::$instance;
+        return self::$_instance;
     }
+
+
+    public function CRUD($sql)
+    {
+        return $this->_pdo->query($sql);
+    }
+
 }

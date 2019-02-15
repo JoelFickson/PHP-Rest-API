@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|PT+Sans|Slabo+27px|Source+Sans+Pro');
+
+body * {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.navbar {
+    background: #00acc1 !important;
+    color: #FFF;
+}
+
+.nav-link, .navbar-brand {
+    color: #FFF !important;
+}
+
+#home-display {
+
+    padding: 10px;
+}
+
+.white-text {
+    color: #FFFFFF !important;
+    font-family: "Source Code Pro", sans-serif;
+}
+
+.ThemeText {
+    color: #00acc1 !important;
+    text-align: center;
+    padding: 10px;
+}
+
+/*Card UI*/
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+    padding: 2px 16px;
+}
+
+#CustomMargins {
+    margin-bottom: 5px;
+}
+
+.form-class {
+    padding: 10px;
+}
